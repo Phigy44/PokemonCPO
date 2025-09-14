@@ -8,17 +8,23 @@ var rng = RandomNumberGenerator.new()
 var packSize = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+	load_cards()
 	#Testing
-	card_data_list = [
-		{"name": "Bisasam", "rarity": "common", "image": "res://assets/cards/001_Bisasam.png"},
-		{"name": "Bisaknosp", "rarity": "rare", "image": "res://assets/cards/002_Bisaknosp.png"},
-		{"name": "Bisaflor", "rarity": "Legendary", "image": "res://assets/cards/003_Bisaflor.png"},
-		{"name": "Glumanda", "rarity": "common", "image": "res://assets/cards/005_Glutexo.png"},
-		{"name": "Glutexo", "rarity": "rare", "image": "res://assets/cards/005_Glutexo.png"},
-		{"name": "Glurak", "rarity": "Legendary", "image": "res://assets/cards/005_Glutexo.png"},
-	]
 	rng.randomize()
-	
+
+func load_cards():
+	var file = FileAccess.open("res://data/cards.json",FileAccess.READ)
+	if file:
+		var	text = file.get_as_text()
+		var parsed = JSON.parse_string(text)
+		if typeof(parsed) == TYPE_ARRAY:
+			card_data_list = parsed
+			print("✅ Karten geladen: ", card_data_list.size())
+		else:
+			push_error("❌ JSON ist nicht im erwarteten Array-Format!")
+	else:
+		push_error("❌ Konnte cards.json nicht öffnen")
 
 func open_Pack_pressed():
 	print("New Pack")
