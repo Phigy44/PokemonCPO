@@ -1,8 +1,10 @@
 extends Node2D
 
+const CARD_IMAGE_PATH = "res://assets/cards/"
+
 @export var card_name:String = "Bisasam"
 @export var rarity:String = "Common"
-@export var image_path:String = "res://assets/cards/002_Bisaknosp.png"
+
 
 
 @onready var name_label = $CardRoot/NameLabel
@@ -14,9 +16,8 @@ func _ready():
 	name_label.text = card_name
 	rarity_label.text = rarity
 
-	#Bild setzten
-	if image_path != "":
-		cardImage.texture = load(image_path)
+	
+
 	apply_rarity_color()
 
 
@@ -30,9 +31,10 @@ func set_card(data: Dictionary):
 		apply_frame_color(data["rarity"])
 		apply_rarity_color()
 	if data.has("image"):
-		image_path = data["image"]
-		rarity_label.text = rarity
-		cardImage.texture = load(image_path)
+		var path = data["image"]
+		if not path.begins_with("res://"):
+			path = CARD_IMAGE_PATH + path		
+		cardImage.texture = load(path)
 
 
 func apply_rarity_color():

@@ -2,31 +2,31 @@
   {
     "name": "Bisasam",
     "rarity": "common",
-    "image": "res://assets/cards/001_Bisasam.png"
+    "image": "1 - WKScOyp.png"
   },
   {
     "name": "Bisaknosp",
     "rarity": "common",
-    "image": "res://assets/cards/002_Bisaknosp.png"
+    "image": "1 - WKScOyp.png"
   },
   {
     "name": "Bisaflor",
     "rarity": "rare",
-    "image": "res://assets/cards/003_Bisaflor.png"
+    "image": "1 - WKScOyp.png"
   },
   {
     "name": "Glumanda",
     "rarity": "common",
-    "image": "res://assets/cards/005_Glutexo.png"
+    "image": "1 - WKScOyp.png"
   },
   {
     "name": "Glutexo",
     "rarity": "rare",
-    "image": "res://assets/cards/005_Glutexo.png"
+    "image": "1 - WKScOyp.png"
   },
   {
     "name": "Glurak",
     "rarity": "legendary",
-    "image": "res://assets/cards/005_Glutexo.png"
+    "image": "1 - WKScOyp.png"
   }
 ]
