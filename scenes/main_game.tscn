@@ -4,8 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://56rnymkl2mm1" path="res://scenes/card.tscn" id="2_u5deu"]
 
 [node name="MainGame" type="Node2D"]
+position = Vector2(9, 0)
 script = ExtResource("1_5xkuq")
 card_scene = ExtResource("2_u5deu")
 
+[node name="OpenPackButton" type="Button" parent="."]
+offset_left = -677.0
+offset_top = 465.0
+offset_right = -527.0
+offset_bottom = 515.0
+text = "OpenPack
+"
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(4, 4)
+position = Vector2(-625, 6)
+
+[connection signal="pressed" from="OpenPackButton" to="." method="open_Pack_pressed"]

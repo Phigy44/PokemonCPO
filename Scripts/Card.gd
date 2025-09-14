@@ -47,6 +47,3 @@ func apply_rarity_color():
 			rarity_label.modulate = Color.GOLD
 		"_":
 			rarity_label.modulate = Color.WHITE
-
-
-
