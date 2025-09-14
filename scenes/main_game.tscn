@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnsnbryvdn2qp"]
+
+[ext_resource type="Script" path="res://MainGame.gd" id="1_5xkuq"]
+[ext_resource type="PackedScene" uid="uid://56rnymkl2mm1" path="res://scenes/card.tscn" id="2_u5deu"]
+
+[node name="MainGame" type="Node2D"]
+position = Vector2(564, 295)
+script = ExtResource("1_5xkuq")
+
+[node name="Card" parent="." instance=ExtResource("2_u5deu")]
+rarity = "common"
+image_path = "002_Bisaknosp.png"
