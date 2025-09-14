@@ -7,7 +7,8 @@
 script = ExtResource("1_g6xq8")
 
 [node name="Front" type="Sprite2D" parent="."]
-position = Vector2(85, 73)
+position = Vector2(81, 84)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_m7hu5")
 
 [node name="NameLabel" type="Label" parent="."]

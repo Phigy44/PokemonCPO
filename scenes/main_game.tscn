@@ -4,9 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://56rnymkl2mm1" path="res://scenes/card.tscn" id="2_u5deu"]
 
 [node name="MainGame" type="Node2D"]
-position = Vector2(564, 295)
 script = ExtResource("1_5xkuq")
+card_scene = ExtResource("2_u5deu")
 
-[node name="Card" parent="." instance=ExtResource("2_u5deu")]
-rarity = "common"
-image_path = "002_Bisaknosp.png"
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(4, 4)
