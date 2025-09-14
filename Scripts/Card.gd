@@ -5,9 +5,10 @@ extends Node2D
 @export var image_path:String = "res://assets/cards/002_Bisaknosp.png"
 
 
-@onready var name_label = $NameLabel
-@onready var rarity_label = $RarityLabel
-@onready var front_sprite = $Front 
+@onready var name_label = $CardRoot/NameLabel
+@onready var rarity_label = $CardRoot/RarityLabel
+@onready var cardImage = $CardRoot/CardImage 
+@onready var frame = $CardRoot/CardFrame
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	name_label.text = card_name
@@ -15,7 +16,7 @@ func _ready():
 
 	#Bild setzten
 	if image_path != "":
-		front_sprite.texture = load(image_path)
+		cardImage.texture = load(image_path)
 	apply_rarity_color()
 
 
@@ -26,11 +27,12 @@ func set_card(data: Dictionary):
 	if data.has("rarity"):
 		rarity = data["rarity"]
 		rarity_label.text = rarity
+		apply_frame_color(data["rarity"])
 		apply_rarity_color()
 	if data.has("image"):
 		image_path = data["image"]
 		rarity_label.text = rarity
-		front_sprite.texture = load(image_path)
+		cardImage.texture = load(image_path)
 
 
 func apply_rarity_color():
@@ -47,3 +49,21 @@ func apply_rarity_color():
 			rarity_label.modulate = Color.GOLD
 		"_":
 			rarity_label.modulate = Color.WHITE
+
+func apply_frame_color(raritydata):
+	var stylebox = frame.get_theme_stylebox("panel").duplicate() as StyleBoxFlat
+	match raritydata.to_lower():
+		"common":
+			stylebox.border_color = Color.GRAY
+		"uncommon":
+			stylebox.border_color = Color.GREEN
+		"rare":
+			stylebox.border_color = Color.BLUE
+		"ultra":
+			stylebox.border_color = Color.SILVER
+		"legendary":
+			stylebox.border_color = Color.GOLD
+		"_":
+			stylebox.border_color = Color.WHITE
+
+	frame.add_theme_stylebox_override("panel",stylebox)

@@ -11,7 +11,7 @@ func _ready():
 	#Testing
 	card_data_list = [
 		{"name": "Bisasam", "rarity": "common", "image": "res://assets/cards/001_Bisasam.png"},
-		{"name": "Bisaknops", "rarity": "rare", "image": "res://assets/cards/002_Bisaknosp.png"},
+		{"name": "Bisaknosp", "rarity": "rare", "image": "res://assets/cards/002_Bisaknosp.png"},
 		{"name": "Bisaflor", "rarity": "Legendary", "image": "res://assets/cards/003_Bisaflor.png"},
 		{"name": "Glumanda", "rarity": "common", "image": "res://assets/cards/005_Glutexo.png"},
 		{"name": "Glutexo", "rarity": "rare", "image": "res://assets/cards/005_Glutexo.png"},
