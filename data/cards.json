@@ -28,5 +28,35 @@
     "name": "Glurak",
     "rarity": "legendary",
     "image": "6.png"
+  },
+  {
+    "name": "Schiggy",
+    "rarity": "common",
+    "image": "7.png"
+  },
+  {
+    "name": "Schillok",
+    "rarity": "common",
+    "image": "8.png"
+  },
+  {
+    "name": "Turtok",
+    "rarity": "rare",
+    "image": "9.png"
+  },
+  {
+    "name": "Raupy",
+    "rarity": "common",
+    "image": "10.png"
+  },
+  {
+    "name": "Safcon",
+    "rarity": "rare",
+    "image": "11.png"
+  },
+  {
+    "name": "Smettbo",
+    "rarity": "legendary",
+    "image": "12.png"
   }
 ]
