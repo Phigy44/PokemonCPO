@@ -11,6 +11,14 @@ const CARD_IMAGE_PATH = "res://assets/cards/"
 @onready var rarity_label = $CardRoot/RarityLabel
 @onready var cardImage = $CardRoot/CardImage 
 @onready var frame = $CardRoot/CardFrame
+@onready var anim = $CardRoot/AnimationPlayer
+@onready var backImage = $CardRoot/BackImage
+
+
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	name_label.text = card_name
@@ -19,6 +27,9 @@ func _ready():
 	
 
 	apply_rarity_color()
+
+
+
 
 
 func set_card(data: Dictionary):
@@ -69,3 +80,11 @@ func apply_frame_color(raritydata):
 			stylebox.border_color = Color.WHITE
 
 	frame.add_theme_stylebox_override("panel",stylebox)
+
+
+func flip():
+	anim.play("flip")
+
+func flip_with_delay(delay):
+	await get_tree().create_timer(delay).timeout
+	flip()

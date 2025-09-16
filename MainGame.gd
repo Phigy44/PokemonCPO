@@ -55,3 +55,8 @@ func open_Pack_pressed():
 		#Daten setzten
 		print(x)
 		card.set_card(pack[i])
+
+		var delay = i * 0.3
+		print("Current Card :" , card.name)
+		card.flip_with_delay(delay)
+		
